@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <svg id="ctx" width="4000px" height = "2000px" xlmns="http://www.w3.org/2000/svg">
+            <image href="staff.png" x="20"y="20"></image>
+        </svg>
+
+        <script>
+        window.onload = function(){
+
+            let ctx = document.querySelector("#ctx");
+
+            const svgNS = "http://www.w3.org/2000/svg";
+
+            let notes = ["e","e","f","g","g","f","e","d","c","c","d","e","e","d","d","e","e","f","g","g","f","e","d","c","c","d","e","d","c","c","d","d","e","c","d","e","f","e","c","d","e","f","e","c","d","e","d","a","e","e","f","g","g","f","e","d","c","c","d","e","d","c","c"];
+
+            let xPos = 130;
+            for(let x=0;x<notes.length;x++)
+            {
+                let note = document.createElementNS(svgNS,"image");
+
+                
+                let spacing = 50;
+
+                switch(notes[x])
+                {
+                    case("c"): 
+                    note.setAttributeNS(null,"href","upNote.png");
+                    note.setAttributeNS(null,"x", xPos);
+                    note.setAttributeNS(null,"y", 26);
+                    break;
+                    case("d"):
+                    
+                    note.setAttributeNS(null,"href","downNote.png");
+                    note.setAttributeNS(null,"x", xPos);
+                    note.setAttributeNS(null,"y", 53); //43 E
+                    break;
+                    case("e"): 
+                    note.setAttributeNS(null,"href","downNote.png");
+                    note.setAttributeNS(null,"x", xPos);
+                    note.setAttributeNS(null,"y", 43); //43 E
+                    break;
+                    case("f"): 
+                    note.setAttributeNS(null,"href","downNote.png");
+                    note.setAttributeNS(null,"x", xPos);
+                    note.setAttributeNS(null,"y", 33);
+                    
+                    break;
+                    case("g"): 
+                    note.setAttributeNS(null,"href","downNote.png");
+                    note.setAttributeNS(null,"x", xPos);
+                    note.setAttributeNS(null,"y", 23);
+                    break;
+                    case("a"): 
+                    note.setAttributeNS(null,"href","a.png");
+                    note.setAttributeNS(null,"x", xPos);
+                    note.setAttributeNS(null,"y", 18);
+                    break;
+
+                }
+                xPos += spacing;
+                
+
+                ctx.appendChild(note);
+                
+            }
+        }
+        
+        </script>
+    </body>
+</html>
